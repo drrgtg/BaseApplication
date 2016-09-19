@@ -1,0 +1,29 @@
+//
+//  BasePCH.pch
+//  BaseApplication_demo
+//
+//  Created by FeZo on 16/9/13.
+//  Copyright © 2016年 FezoLsp. All rights reserved.
+//
+
+#ifndef BasePCH_pch
+#define BasePCH_pch
+#ifdef __OBJC__
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "Macro.h"
+#import "CatogoryAPI.h"
+#import "RequestAPI.h"
+#import "ModelAPI.h"
+
+
+
+#import <AFNetworking.h>
+#import <MJRefresh.h>
+#import <MBProgressHUD.h>
+#import <DACircularProgressView.h>
+#import <SVProgressHUD.h>
+
+
+#endif
+#endif /* BasePCH_pch */
