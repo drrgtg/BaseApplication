@@ -22,7 +22,7 @@
     [self setNavigationBarHidden:NO];
     
 
-    self.navigationBar.translucent = YES;
+    self.navigationBar.translucent = NO;
     
     id target = self.interactivePopGestureRecognizer.delegate;
     

@@ -77,9 +77,9 @@ MBProgressHUD *hud;
         //文字
         hud.labelText = message;
         //提示框颜色
-        hud.labelColor = [UIColor whiteColor];
+        hud.labelColor = [UIColor blackColor];
         //文字颜色
-        hud.color = [UIColor blackColor];
+        hud.color = [UIColor whiteColor];
         //是否程辐射显示
         hud.dimBackground = NO;
         //动画方式

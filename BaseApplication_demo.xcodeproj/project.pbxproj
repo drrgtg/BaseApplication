@@ -31,6 +31,10 @@
 		E61394D51D87EDFC00E98943 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E61394D41D87EDFC00E98943 /* BaseModel.m */; };
 		E61394D81D87EF4900E98943 /* NSObject+propertyList.m in Sources */ = {isa = PBXBuildFile; fileRef = E61394D71D87EF4900E98943 /* NSObject+propertyList.m */; };
 		E61394DC1D87F2A900E98943 /* Model1.m in Sources */ = {isa = PBXBuildFile; fileRef = E61394DB1D87F2A900E98943 /* Model1.m */; };
+		E6716A581D90D86D009A22D9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6716A561D90D86D009A22D9 /* Model.xcdatamodeld */; };
+		E6716A5D1D90D8B2009A22D9 /* Entity1+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E6716A5A1D90D8B2009A22D9 /* Entity1+CoreDataProperties.m */; };
+		E6716A5E1D90D8B2009A22D9 /* Entity1.m in Sources */ = {isa = PBXBuildFile; fileRef = E6716A5C1D90D8B2009A22D9 /* Entity1.m */; };
+		E6716A611D90D8D7009A22D9 /* CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = E6716A601D90D8D7009A22D9 /* CoreData.m */; };
 		E678651B1D8E25C20094237E /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = E678651A1D8E25C20094237E /* Request.m */; };
 		E678651D1D8ECB980094237E /* 引导一.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E678651C1D8ECB980094237E /* 引导一.jpg */; };
 		FE83B725B1BE3076023135B9 /* libPods-BaseApplication_demoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3775D9E96ADA80DC5AF473 /* libPods-BaseApplication_demoUITests.a */; };
@@ -86,7 +90,7 @@
 		E613949C1D878CF300E98943 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		E613949D1D878CF300E98943 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		E613949E1D878CF300E98943 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		E613949F1D878CF300E98943 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		E613949F1D878CF300E98943 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E61394A01D878CF300E98943 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		E61394A11D878CF300E98943 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		E61394AA1D878D6900E98943 /* CatogoryAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatogoryAPI.h; sourceTree = "<group>"; };
@@ -113,6 +117,13 @@
 		E61394D91D87F10D00E98943 /* ModelAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelAPI.h; sourceTree = "<group>"; };
 		E61394DA1D87F2A900E98943 /* Model1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model1.h; sourceTree = "<group>"; };
 		E61394DB1D87F2A900E98943 /* Model1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model1.m; sourceTree = "<group>"; };
+		E6716A571D90D86D009A22D9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		E6716A591D90D8B2009A22D9 /* Entity1+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Entity1+CoreDataProperties.h"; sourceTree = "<group>"; };
+		E6716A5A1D90D8B2009A22D9 /* Entity1+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Entity1+CoreDataProperties.m"; sourceTree = "<group>"; };
+		E6716A5B1D90D8B2009A22D9 /* Entity1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity1.h; sourceTree = "<group>"; };
+		E6716A5C1D90D8B2009A22D9 /* Entity1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entity1.m; sourceTree = "<group>"; };
+		E6716A5F1D90D8D7009A22D9 /* CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreData.h; sourceTree = "<group>"; };
+		E6716A601D90D8D7009A22D9 /* CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreData.m; sourceTree = "<group>"; };
 		E67865191D8E25C20094237E /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
 		E678651A1D8E25C20094237E /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
 		E678651C1D8ECB980094237E /* 引导一.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "引导一.jpg"; sourceTree = "<group>"; };
@@ -258,8 +269,15 @@
 				E61394B91D87A9EE00E98943 /* Control */,
 				E613949C1D878CF300E98943 /* FirstViewController.h */,
 				E613949D1D878CF300E98943 /* FirstViewController.m */,
+				E6716A5F1D90D8D7009A22D9 /* CoreData.h */,
+				E6716A601D90D8D7009A22D9 /* CoreData.m */,
 				E613949E1D878CF300E98943 /* SecondViewController.h */,
 				E613949F1D878CF300E98943 /* SecondViewController.m */,
+				E6716A561D90D86D009A22D9 /* Model.xcdatamodeld */,
+				E6716A591D90D8B2009A22D9 /* Entity1+CoreDataProperties.h */,
+				E6716A5A1D90D8B2009A22D9 /* Entity1+CoreDataProperties.m */,
+				E6716A5B1D90D8B2009A22D9 /* Entity1.h */,
+				E6716A5C1D90D8B2009A22D9 /* Entity1.m */,
 				E61394A01D878CF300E98943 /* ThirdViewController.h */,
 				E61394A11D878CF300E98943 /* ThirdViewController.m */,
 			);
@@ -409,6 +427,7 @@
 				TargetAttributes = {
 					E61394471D8786ED00E98943 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = TEA4KWX63Q;
 					};
 					E61394631D8786EE00E98943 = {
 						CreatedOnToolsVersion = 7.3;
@@ -601,17 +620,21 @@
 				E61394D51D87EDFC00E98943 /* BaseModel.m in Sources */,
 				E61394D81D87EF4900E98943 /* NSObject+propertyList.m in Sources */,
 				E61394B01D87A51E00E98943 /* CommonController.m in Sources */,
+				E6716A611D90D8D7009A22D9 /* CoreData.m in Sources */,
 				E61394BC1D87AB3300E98943 /* UIView+accelerator.m in Sources */,
+				E6716A581D90D86D009A22D9 /* Model.xcdatamodeld in Sources */,
 				E61394CE1D87ED0600E98943 /* UILabel+accelerator.m in Sources */,
 				E61394A71D878CF300E98943 /* ThirdViewController.m in Sources */,
 				E61394C21D87CBFA00E98943 /* UIImage+color.m in Sources */,
 				E61394D11D87ED5A00E98943 /* NSString+accelerator.m in Sources */,
 				E61394CB1D87D3DC00E98943 /* UIViewController+progress.m in Sources */,
 				E61394A31D878CF300E98943 /* MyNavigationController.m in Sources */,
+				E6716A5E1D90D8B2009A22D9 /* Entity1.m in Sources */,
 				E61394A61D878CF300E98943 /* SecondViewController.m in Sources */,
 				E613944D1D8786ED00E98943 /* main.m in Sources */,
 				E678651B1D8E25C20094237E /* Request.m in Sources */,
 				E61394B71D87A9C700E98943 /* RetryView.m in Sources */,
+				E6716A5D1D90D8B2009A22D9 /* Entity1+CoreDataProperties.m in Sources */,
 				E61394A41D878CF300E98943 /* MyTabBarController.m in Sources */,
 				E61394B61D87A9C600E98943 /* RetryButton.m in Sources */,
 			);
@@ -697,7 +720,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -735,7 +758,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -746,7 +769,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 78EEB5CBEE6DF115F16FBE35 /* Pods-BaseApplication_demo.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TEA4KWX63Q;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BaseApplication_demo/BasePCH.pch";
 				INFOPLIST_FILE = BaseApplication_demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -760,7 +783,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B73A2D8202FEF1624E1F02D0 /* Pods-BaseApplication_demo.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TEA4KWX63Q;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BaseApplication_demo/BasePCH.pch";
 				INFOPLIST_FILE = BaseApplication_demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -860,6 +883,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E6716A561D90D86D009A22D9 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E6716A571D90D86D009A22D9 /* Model.xcdatamodel */,
+			);
+			currentVersion = E6716A571D90D86D009A22D9 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E61394401D8786ED00E98943 /* Project object */;
 }

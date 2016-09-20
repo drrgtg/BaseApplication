@@ -10,6 +10,9 @@
 
 @interface FirstViewController ()
 
+@property (nonatomic, strong) UILabel   *myView;
+
+
 @end
 
 @implementation FirstViewController
@@ -19,7 +22,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor orangeColor];
     [self showAlertMessage:@"messagemessage"];
-
+    
     
     /**
      *  dispatch
@@ -134,7 +137,12 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"%@",[NSValue valueWithCGPoint:[[touches anyObject] locationInView:self.view]]);
+
     
+    
+    
+//    [self.myView convertPoint:point toCoordinateSpace:myView.window.screen.fixedCoordinateSpace];
+
 }
 
 @end

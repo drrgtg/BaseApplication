@@ -52,7 +52,8 @@
     [self.view addSubview:self.HUD];
     
     [self setNeedsStatusBarAppearanceUpdate];
-    self.hidesBottomBarWhenPushed = YES;
+    
+//    self.hidesBottomBarWhenPushed = YES;
     
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
