@@ -33,19 +33,21 @@
     self.firstVC = [[FirstViewController alloc]init];
     self.secondVC = [[SecondViewController alloc]init];
     self.thirdVC = [[ThirdViewController alloc]init];
+    
     MyNavigationController *nav1= [[MyNavigationController alloc]initWithRootViewController:self.firstVC];
     MyNavigationController *nav2= [[MyNavigationController alloc]initWithRootViewController:self.secondVC];
     MyNavigationController *nav3= [[MyNavigationController alloc]initWithRootViewController:self.thirdVC];
     
     //tabbar
-    self.firstVC.tabBarItem = [[UITabBarItem alloc]initWithTabBarSystemItem:UITabBarSystemItemMore tag:0];
-    self.secondVC.tabBarItem = [[UITabBarItem alloc]initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:1];
-    self.thirdVC.tabBarItem = [[UITabBarItem alloc]initWithTabBarSystemItem:UITabBarSystemItemFeatured tag:2];
+    self.firstVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:[UIImage imageNamed:@"tab_home"] selectedImage:[UIImage imageNamed:@"tab_home_hot"]];
+    self.secondVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"二页" image:[UIImage imageNamed:@"tab_search"] selectedImage:[UIImage imageNamed:@"tab_search_hot"]];
+    self.thirdVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"三页" image:[UIImage imageNamed:@"tab_profile"] selectedImage:[UIImage imageNamed:@"tab_profile_hot"]];
     
+    self.tabBar.tintColor = [UIColor blackColor];
     //titile
-    self.firstVC.title = @"第一个视图";
-    self.secondVC.title = @"第二个视图";
-    self.thirdVC.title = @"第三个视图";
+    self.firstVC.navigationItem.title = @"First";
+    self.secondVC.navigationItem.title = @"Second";
+    self.thirdVC.navigationItem.title = @"Thirty";
     //ViewControllers
     self.viewControllers = @[nav1,nav2,nav3];
 
