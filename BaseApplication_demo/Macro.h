@@ -31,6 +31,7 @@
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
+#define WeakSelf     typeof(self) __weak weakSelf = self;
 
 
 

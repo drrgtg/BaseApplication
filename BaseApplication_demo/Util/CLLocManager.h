@@ -12,8 +12,10 @@
 @protocol CLLocManagerDelegate <NSObject>
 
 @optional
-
+//当前的定位位置
 - (void)locationWithLoc:(CLLocation *) cllocation;
+//地理位置解码的数据
+- (void)geoCoder: (NSArray  <CLPlacemark *> *) placemarks;
 
 @end
 @interface CLLocManager : NSObject

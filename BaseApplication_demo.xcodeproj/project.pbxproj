@@ -36,6 +36,7 @@
 		E61394D51D87EDFC00E98943 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E61394D41D87EDFC00E98943 /* BaseModel.m */; };
 		E61394D81D87EF4900E98943 /* NSObject+propertyList.m in Sources */ = {isa = PBXBuildFile; fileRef = E61394D71D87EF4900E98943 /* NSObject+propertyList.m */; };
 		E61394DC1D87F2A900E98943 /* Model1.m in Sources */ = {isa = PBXBuildFile; fileRef = E61394DB1D87F2A900E98943 /* Model1.m */; };
+		E65AE2471E0CC0F000611DA4 /* ULSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E65AE2461E0CC0F000611DA4 /* ULSegmentControl.m */; };
 		E6716A581D90D86D009A22D9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6716A561D90D86D009A22D9 /* Model.xcdatamodeld */; };
 		E6716A5D1D90D8B2009A22D9 /* Entity1+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E6716A5A1D90D8B2009A22D9 /* Entity1+CoreDataProperties.m */; };
 		E6716A5E1D90D8B2009A22D9 /* Entity1.m in Sources */ = {isa = PBXBuildFile; fileRef = E6716A5C1D90D8B2009A22D9 /* Entity1.m */; };
@@ -131,6 +132,8 @@
 		E61394D91D87F10D00E98943 /* ModelAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelAPI.h; sourceTree = "<group>"; };
 		E61394DA1D87F2A900E98943 /* Model1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model1.h; sourceTree = "<group>"; };
 		E61394DB1D87F2A900E98943 /* Model1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model1.m; sourceTree = "<group>"; };
+		E65AE2451E0CC0F000611DA4 /* ULSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ULSegmentControl.h; sourceTree = "<group>"; };
+		E65AE2461E0CC0F000611DA4 /* ULSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ULSegmentControl.m; sourceTree = "<group>"; };
 		E6716A571D90D86D009A22D9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E6716A591D90D8B2009A22D9 /* Entity1+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Entity1+CoreDataProperties.h"; path = "../Class/Entity1+CoreDataProperties.h"; sourceTree = "<group>"; };
 		E6716A5A1D90D8B2009A22D9 /* Entity1+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Entity1+CoreDataProperties.m"; path = "../Class/Entity1+CoreDataProperties.m"; sourceTree = "<group>"; };
@@ -373,6 +376,8 @@
 				E61394B31D87A9C600E98943 /* RetryButton.m */,
 				E61394B41D87A9C600E98943 /* RetryView.h */,
 				E61394B51D87A9C600E98943 /* RetryView.m */,
+				E65AE2451E0CC0F000611DA4 /* ULSegmentControl.h */,
+				E65AE2461E0CC0F000611DA4 /* ULSegmentControl.m */,
 			);
 			name = Control;
 			sourceTree = "<group>";
@@ -673,6 +678,7 @@
 				E61394DC1D87F2A900E98943 /* Model1.m in Sources */,
 				E61394A51D878CF300E98943 /* FirstViewController.m in Sources */,
 				E61394D51D87EDFC00E98943 /* BaseModel.m in Sources */,
+				E65AE2471E0CC0F000611DA4 /* ULSegmentControl.m in Sources */,
 				E61394D81D87EF4900E98943 /* NSObject+propertyList.m in Sources */,
 				E60522E51E08FD7A00B1CA21 /* TableViewController.m in Sources */,
 				E61394B01D87A51E00E98943 /* CommonController.m in Sources */,

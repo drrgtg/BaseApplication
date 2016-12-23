@@ -10,16 +10,26 @@
 #import <MapKit/MapKit.h>
 
 #import "CLLocManager.h"
+#import "ULSegmentControl.h"
 
 @interface NativeMapVC ()
 <
 CLLocManagerDelegate,
-MKMapViewDelegate
+MKMapViewDelegate,
+UITableViewDelegate,
+UITableViewDataSource
 >
 @property (strong, nonatomic) MKMapView   *mapView;
 
+@property (strong, nonatomic) UITableView   *listTable;
+
+@property (strong, nonatomic) ULSegmentControl   *segment;
+
 @property (nonatomic) CLLocation *centerLocation;
 
+@property (strong, nonatomic) NSMutableArray   *dataSourece;
+
+@property (nonatomic) BOOL  isFinished;
 @end
 
 @implementation NativeMapVC
@@ -27,7 +37,15 @@ MKMapViewDelegate
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     [self.view addSubview:self.mapView];
+    [self.view addSubview:self.listTable];
+    [self.view addSubview:self.segment];
+
+    [self.segment clickedSegmentAtIndex:^(NSUInteger index, NSString *text) {
+        NSLog(@"%zd:%@",index,text);
+        
+    }];
     CLLocManager *man = [CLLocManager shareLocationManager];
     
     man.delegate = self;
@@ -39,25 +57,53 @@ MKMapViewDelegate
     self.centerLocation = cllocation;
 }
 
-
-
-- (void)setCenterCoordinate:(CLLocationCoordinate2D)coordinate animated:(BOOL)animated
-{
-    
-}
 #pragma mark ------------ 定位当前位置动画 --------------
-- (void)animationLocation
+- (void)animationLocation:(CLLocation *)location
 {
-    [self.mapView setCenterCoordinate:self.centerLocation.coordinate animated:YES];
-    [self.mapView setRegion:MKCoordinateRegionMake(self.centerLocation.coordinate, MKCoordinateSpanMake(0.01, 0.01)) animated:YES];
+    [self.mapView setCenterCoordinate:location.coordinate animated:YES];
+    [self.mapView setRegion:MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(0.01, 0.01)) animated:YES];
+    self.isFinished = YES;
 }
 
 #pragma mark ------------Lazy --------------
+
+
+- (NSMutableArray *)dataSourece
+{
+    if (!_dataSourece)
+    {
+        _dataSourece = [NSMutableArray arrayWithCapacity:1];
+    }
+    return _dataSourece;
+}
+- (ULSegmentControl *)segment
+{
+    if (!_segment)
+    {
+        _segment = [[ULSegmentControl alloc] initWithFrame:CGRectMake(0, self.view.frame.size.width/5*3, self.view.frame.size.width, 40) andTextArray:@[@"全部",@"写字楼",@"小区",@"学校"]];
+        
+    }
+    return _segment;
+}
+- (UITableView *)listTable
+{
+    if (!_listTable)
+    {
+        _listTable = [[UITableView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.width/5*3+40, self.view.frame.size.width, self.view.frame.size.height-self.view.frame.size.width/5*3-64-40) style:UITableViewStylePlain];
+        _listTable.delegate = self;
+        _listTable.dataSource = self;
+//        _listTable.showsHorizontalScrollIndicator = NO;
+//        _listTable.showsVerticalScrollIndicator = NO;
+        
+    }
+    return _listTable;
+}
+
 - (MKMapView *)mapView
 {
     if (!_mapView)
     {
-        _mapView  = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width/4*3)];
+        _mapView  = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width/5*3)];
         /*
          MKMapTypeStandard = 0,//显示所有道路和一些道路名称位置的街道地图
          MKMapTypeSatellite,//显示该区域的卫星图像
@@ -93,6 +139,88 @@ MKMapViewDelegate
     return _mapView;
 }
 
+/**
+ 搜索当前位置附近的建筑物，比如小区，大厦，学校等
+
+ @param loc 地理位置
+ */
+-(void)searchLocationInterst:(CLLocationCoordinate2D) loc
+{
+    CLLocation *currentLoc = [[CLLocation alloc] initWithLatitude:loc.latitude longitude:loc.longitude];
+    
+    //创建一个位置信息对象，第一个参数为经纬度，第二个为纬度检索范围，单位为米，第三个为经度检索范围，单位为米
+
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 3000, 3000);
+    //初始化一个检索请求对象
+    MKLocalSearchRequest * req = [[MKLocalSearchRequest alloc]init];
+    //设置检索参数
+    req.region=region;
+    //兴趣点关键字
+//    req.naturalLanguageQuery = @"all";
+    req.naturalLanguageQuery=@"小区";
+//    req.naturalLanguageQuery=@"写字楼";
+//    req.naturalLanguageQuery=@"学校";
+    //初始化检索
+    MKLocalSearch * ser = [[MKLocalSearch alloc]initWithRequest:req];
+    //开始检索，结果返回在block中
+    [ser startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+        //兴趣点节点数组
+        [self.dataSourece removeAllObjects];
+        //距离当前位置排序
+       NSArray<MKMapItem *> * addressArr =  [response.mapItems sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+            MKMapItem *item1 = obj1;
+            MKMapItem *item2 = obj2;
+           CLLocationDistance dis1 = [currentLoc distanceFromLocation:item1.placemark.location];
+            CLLocationDistance dis2 = [currentLoc distanceFromLocation:item2.placemark.location];
+            return dis1 >dis2;
+        }];
+        //添加到dataSource中
+        [addressArr enumerateObjectsUsingBlock:^(MKMapItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [self.dataSourece addObject:obj];
+        }];
+        //刷新tableView
+        [self.listTable reloadData];
+        
+        
+    }];
+
+}
+
+#pragma mark ------------TableViewDataSource --------------
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.dataSourece.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellID = @"dingweiId";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    if (!cell)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
+    }
+    cell.imageView.image = [UIImage imageNamed:@"weizhi"];
+    cell.imageView.contentMode = UIViewContentModeTop;
+    MKMapItem *item = self.dataSourece[indexPath.row];
+    cell.textLabel.text = item.name;
+    cell.detailTextLabel.text = [item.placemark.addressDictionary objectForKey:@"Thoroughfare"];
+    
+    
+    cell.separatorInset = UIEdgeInsetsMake(0, -30, 0, 0);
+    
+    return cell;
+}
+
+#pragma mark ------------TableView Delegate --------------
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 
 #pragma mark ------------MKMapView Delegate --------------
 
@@ -104,6 +232,11 @@ MKMapViewDelegate
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
 {
     NSLog(@"%s",__FUNCTION__);
+    NSLog(@"%f,%f",mapView.centerCoordinate.longitude,mapView.centerCoordinate.latitude);
+    //当用户拖拽完成的时候根据中心点来自动搜索附近兴趣点。比如小区，写字楼，学校，全部等等.
+    if (self.isFinished) {
+        [self searchLocationInterst:mapView.centerCoordinate];
+    }
 
 }
 //加载地图
@@ -114,8 +247,6 @@ MKMapViewDelegate
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView
 {
     NSLog(@"%s",__FUNCTION__);
-    
-
 }
 //加载地图失败
 - (void)mapViewDidFailLoadingMap:(MKMapView *)mapView withError:(NSError *)error
@@ -141,6 +272,20 @@ MKMapViewDelegate
 {
     NSLog(@"%s",__FUNCTION__);
 
+    MKPinAnnotationView *annoView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MKAnnotationView"];
+    annoView.pinTintColor = [UIColor orangeColor];
+    UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    leftView.backgroundColor = [UIColor greenColor];
+    
+    annoView.leftCalloutAccessoryView = leftView;
+    
+    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    rightView.backgroundColor = [UIColor greenColor];
+    annoView.rightCalloutAccessoryView = rightView;
+    
+    annoView.draggable = YES;
+    annoView.canShowCallout = YES;
+    
     return nil;
 }
 
@@ -151,7 +296,7 @@ MKMapViewDelegate
 {
     NSLog(@"%s",__FUNCTION__);
     //在显示用户点之后进行缩放动画以及定位位置。。。
-    [self animationLocation];
+    [self animationLocation:mapView.userLocation.location];
 }
 
 #if TARGET_OS_IPHONE

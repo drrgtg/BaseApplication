@@ -90,7 +90,7 @@ UITableViewDelegate
 {
     if (!_dataSouce)
     {
-        _dataSouce = [NSMutableArray arrayWithObjects:@"原生地图",@"WKWeb", nil];
+        _dataSouce = [NSMutableArray arrayWithObjects:@"原生地图(高仿饿了吗)",@"WKWeb", nil];
     }
     return _dataSouce;
 }

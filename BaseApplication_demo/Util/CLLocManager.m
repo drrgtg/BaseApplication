@@ -35,7 +35,7 @@ static CLLocManager *mang = nil;
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
         //用于导航的精确度
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
     }
     return self;
 }
@@ -64,7 +64,6 @@ static CLLocManager *mang = nil;
     // 2.地球坐标转火星坐标...高德地图坐标，百度地图会有偏差
     location = [location locationMarsFromEarth];
     NSLog(@"火星：%@",location);
-    
     // 3.停止定位
     [self.locationManager stopUpdatingLocation];
     
@@ -75,9 +74,13 @@ static CLLocManager *mang = nil;
     //逆地址编码>>>>
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-        for (id obj in placemarks)
+        for (CLPlacemark *obj in placemarks)
         {
             NSLog(@"%@",obj);
+        }
+        if ([self.delegate respondsToSelector:@selector(geoCoder:)])
+        {
+            [self.delegate geoCoder:placemarks];
         }
     }];
 }
