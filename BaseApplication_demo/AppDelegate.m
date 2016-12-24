@@ -145,6 +145,13 @@ UNUserNotificationCenterDelegate
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+#pragma mark ------------3D Touch 点击事件处理 --------------
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void(^)(BOOL succeeded))completionHandler NS_AVAILABLE_IOS(9_0) __TVOS_PROHIBITED
+{
+    NSLog(@"%@",shortcutItem.localizedTitle);
+    completionHandler(YES);
+}
+
 #pragma mark ----------------- Notification--iOS 8--
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
