@@ -68,8 +68,7 @@ MBProgressHUD *hud;
 
 -(void)showAlertMessage:(NSString *)message
 {
-    if (!hud)
-    {
+    
         //添加到view上
         hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         //模式
@@ -86,7 +85,6 @@ MBProgressHUD *hud;
         hud.animationType = MBProgressHUDAnimationZoomIn;
         //显示
         [hud show:YES];
-    }
 }
 
 -(void)dismissAllHUD

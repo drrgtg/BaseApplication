@@ -37,6 +37,9 @@
 		E61394D81D87EF4900E98943 /* NSObject+propertyList.m in Sources */ = {isa = PBXBuildFile; fileRef = E61394D71D87EF4900E98943 /* NSObject+propertyList.m */; };
 		E61394DC1D87F2A900E98943 /* Model1.m in Sources */ = {isa = PBXBuildFile; fileRef = E61394DB1D87F2A900E98943 /* Model1.m */; };
 		E65AE2471E0CC0F000611DA4 /* ULSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E65AE2461E0CC0F000611DA4 /* ULSegmentControl.m */; };
+		E65AE2491E0D23A900611DA4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65AE2481E0D23A900611DA4 /* SystemConfiguration.framework */; };
+		E65AE2551E0D38C900611DA4 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = E65AE24F1E0D38C900611DA4 /* image.png */; };
+		E65AE2DD1E0E2A3900611DA4 /* WkWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E65AE2DC1E0E2A3900611DA4 /* WkWebViewController.m */; };
 		E6716A581D90D86D009A22D9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6716A561D90D86D009A22D9 /* Model.xcdatamodeld */; };
 		E6716A5D1D90D8B2009A22D9 /* Entity1+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E6716A5A1D90D8B2009A22D9 /* Entity1+CoreDataProperties.m */; };
 		E6716A5E1D90D8B2009A22D9 /* Entity1.m in Sources */ = {isa = PBXBuildFile; fileRef = E6716A5C1D90D8B2009A22D9 /* Entity1.m */; };
@@ -134,6 +137,67 @@
 		E61394DB1D87F2A900E98943 /* Model1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model1.m; sourceTree = "<group>"; };
 		E65AE2451E0CC0F000611DA4 /* ULSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ULSegmentControl.h; sourceTree = "<group>"; };
 		E65AE2461E0CC0F000611DA4 /* ULSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ULSegmentControl.m; sourceTree = "<group>"; };
+		E65AE2481E0D23A900611DA4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E65AE24F1E0D38C900611DA4 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		E65AE2981E0E283200611DA4 /* 店长推荐.htm */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "店长推荐.htm"; sourceTree = "<group>"; };
+		E65AE29A1E0E283200611DA4 /* 201610111037187915_big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 201610111037187915_big.jpg; sourceTree = "<group>"; };
+		E65AE29B1E0E283200611DA4 /* 201611151601072517_big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 201611151601072517_big.jpg; sourceTree = "<group>"; };
+		E65AE29C1E0E283200611DA4 /* 201611231516338491_big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 201611231516338491_big.jpg; sourceTree = "<group>"; };
+		E65AE29D1E0E283200611DA4 /* 201611241031267859_big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 201611241031267859_big.jpg; sourceTree = "<group>"; };
+		E65AE29E1E0E283200611DA4 /* 201611241226190396_big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 201611241226190396_big.jpg; sourceTree = "<group>"; };
+		E65AE29F1E0E283200611DA4 /* 201612041424242811_big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 201612041424242811_big.jpg; sourceTree = "<group>"; };
+		E65AE2A01E0E283200611DA4 /* 201612061046318572_big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 201612061046318572_big.jpg; sourceTree = "<group>"; };
+		E65AE2A11E0E283200611DA4 /* 201612061503039353_big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 201612061503039353_big.jpg; sourceTree = "<group>"; };
+		E65AE2A21E0E283200611DA4 /* 201612061621335064_big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 201612061621335064_big.jpg; sourceTree = "<group>"; };
+		E65AE2A31E0E283200611DA4 /* 201612081711353636_big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 201612081711353636_big.jpg; sourceTree = "<group>"; };
+		E65AE2A41E0E283200611DA4 /* base.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = base.css; sourceTree = "<group>"; };
+		E65AE2A51E0E283200611DA4 /* detail.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = detail.css; sourceTree = "<group>"; };
+		E65AE2A61E0E283200611DA4 /* dztj.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dztj.jpg; sourceTree = "<group>"; };
+		E65AE2A71E0E283200611DA4 /* jquery-1.7.2.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "jquery-1.7.2.min.js"; sourceTree = "<group>"; };
+		E65AE2A81E0E283200611DA4 /* juicer-min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "juicer-min.js"; sourceTree = "<group>"; };
+		E65AE2A91E0E283200611DA4 /* u84.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = u84.png; sourceTree = "<group>"; };
+		E65AE2AB1E0E283200611DA4 /* copy-template-build-step.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "copy-template-build-step.js"; sourceTree = "<group>"; };
+		E65AE2AE1E0E283200611DA4 /* .documentup.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = .documentup.json; sourceTree = "<group>"; };
+		E65AE2AF1E0E283200611DA4 /* .jshintrc */ = {isa = PBXFileReference; lastKnownFileType = text; path = .jshintrc; sourceTree = "<group>"; };
+		E65AE2B01E0E283200611DA4 /* .npmignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .npmignore; sourceTree = "<group>"; };
+		E65AE2B11E0E283200611DA4 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		E65AE2B31E0E283200611DA4 /* shjs */ = {isa = PBXFileReference; lastKnownFileType = text; path = shjs; sourceTree = "<group>"; };
+		E65AE2B41E0E283200611DA4 /* global.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = global.js; sourceTree = "<group>"; };
+		E65AE2B51E0E283200611DA4 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E65AE2B61E0E283200611DA4 /* make.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = make.js; sourceTree = "<group>"; };
+		E65AE2B71E0E283200611DA4 /* package.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
+		E65AE2B81E0E283200611DA4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E65AE2B91E0E283200611DA4 /* RELEASE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = RELEASE.md; sourceTree = "<group>"; };
+		E65AE2BB1E0E283200611DA4 /* generate-docs.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "generate-docs.js"; sourceTree = "<group>"; };
+		E65AE2BC1E0E283200611DA4 /* run-tests.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "run-tests.js"; sourceTree = "<group>"; };
+		E65AE2BD1E0E283200611DA4 /* shell.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = shell.js; sourceTree = "<group>"; };
+		E65AE2BF1E0E283200611DA4 /* cat.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = cat.js; sourceTree = "<group>"; };
+		E65AE2C01E0E283200611DA4 /* cd.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = cd.js; sourceTree = "<group>"; };
+		E65AE2C11E0E283200611DA4 /* chmod.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = chmod.js; sourceTree = "<group>"; };
+		E65AE2C21E0E283200611DA4 /* common.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = common.js; sourceTree = "<group>"; };
+		E65AE2C31E0E283200611DA4 /* cp.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = cp.js; sourceTree = "<group>"; };
+		E65AE2C41E0E283200611DA4 /* dirs.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = dirs.js; sourceTree = "<group>"; };
+		E65AE2C51E0E283200611DA4 /* echo.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = echo.js; sourceTree = "<group>"; };
+		E65AE2C61E0E283200611DA4 /* error.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = error.js; sourceTree = "<group>"; };
+		E65AE2C71E0E283200611DA4 /* exec.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = exec.js; sourceTree = "<group>"; };
+		E65AE2C81E0E283200611DA4 /* find.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = find.js; sourceTree = "<group>"; };
+		E65AE2C91E0E283200611DA4 /* grep.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = grep.js; sourceTree = "<group>"; };
+		E65AE2CA1E0E283200611DA4 /* ln.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = ln.js; sourceTree = "<group>"; };
+		E65AE2CB1E0E283200611DA4 /* ls.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = ls.js; sourceTree = "<group>"; };
+		E65AE2CC1E0E283200611DA4 /* mkdir.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = mkdir.js; sourceTree = "<group>"; };
+		E65AE2CD1E0E283200611DA4 /* mv.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = mv.js; sourceTree = "<group>"; };
+		E65AE2CE1E0E283200611DA4 /* popd.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = popd.js; sourceTree = "<group>"; };
+		E65AE2CF1E0E283200611DA4 /* pushd.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = pushd.js; sourceTree = "<group>"; };
+		E65AE2D01E0E283200611DA4 /* pwd.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = pwd.js; sourceTree = "<group>"; };
+		E65AE2D11E0E283200611DA4 /* rm.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = rm.js; sourceTree = "<group>"; };
+		E65AE2D21E0E283200611DA4 /* sed.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = sed.js; sourceTree = "<group>"; };
+		E65AE2D31E0E283200611DA4 /* tempdir.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = tempdir.js; sourceTree = "<group>"; };
+		E65AE2D41E0E283200611DA4 /* test.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = test.js; sourceTree = "<group>"; };
+		E65AE2D51E0E283200611DA4 /* to.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = to.js; sourceTree = "<group>"; };
+		E65AE2D61E0E283200611DA4 /* toEnd.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = toEnd.js; sourceTree = "<group>"; };
+		E65AE2D71E0E283200611DA4 /* which.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = which.js; sourceTree = "<group>"; };
+		E65AE2DB1E0E2A3900611DA4 /* WkWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WkWebViewController.h; sourceTree = "<group>"; };
+		E65AE2DC1E0E2A3900611DA4 /* WkWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WkWebViewController.m; sourceTree = "<group>"; };
 		E6716A571D90D86D009A22D9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E6716A591D90D8B2009A22D9 /* Entity1+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Entity1+CoreDataProperties.h"; path = "../Class/Entity1+CoreDataProperties.h"; sourceTree = "<group>"; };
 		E6716A5A1D90D8B2009A22D9 /* Entity1+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Entity1+CoreDataProperties.m"; path = "../Class/Entity1+CoreDataProperties.m"; sourceTree = "<group>"; };
@@ -151,6 +215,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E65AE2491E0D23A900611DA4 /* SystemConfiguration.framework in Frameworks */,
 				E60522ED1E0916CE00B1CA21 /* MapKit.framework in Frameworks */,
 				83551D19B02EB8D0653A5E95 /* libPods-BaseApplication_demo.a in Frameworks */,
 			);
@@ -191,6 +256,7 @@
 		8A92FCC07BF4798EFC5743E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E65AE2481E0D23A900611DA4 /* SystemConfiguration.framework */,
 				E60522EC1E0916CE00B1CA21 /* MapKit.framework */,
 				80C6B11F7D0730585DEC2FAF /* libPods-BaseApplication_demo.a */,
 				7718B3558CC548B154C91A25 /* libPods-BaseApplication_demoTests.a */,
@@ -228,8 +294,8 @@
 			children = (
 				E60522E31E08FD7A00B1CA21 /* TableViewController.h */,
 				E60522E41E08FD7A00B1CA21 /* TableViewController.m */,
-				E60522E91E0912B200B1CA21 /* NativeMapVC.h */,
-				E60522EA1E0912B200B1CA21 /* NativeMapVC.m */,
+				E65AE2DA1E0E2A0000611DA4 /* WkWebView */,
+				E65AE2D91E0E29ED00611DA4 /* 原生地图高仿饿了么 */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -279,7 +345,10 @@
 		E613944B1D8786ED00E98943 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E65AE2971E0E283200611DA4 /* dirName */,
+				E65AE2AA1E0E283200611DA4 /* scripts */,
 				E613945A1D8786EE00E98943 /* Assets.xcassets */,
+				E65AE24F1E0D38C900611DA4 /* image.png */,
 				E613945F1D8786EE00E98943 /* Info.plist */,
 				E613944C1D8786ED00E98943 /* main.m */,
 			);
@@ -394,6 +463,143 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E65AE2971E0E283200611DA4 /* dirName */ = {
+			isa = PBXGroup;
+			children = (
+				E65AE2981E0E283200611DA4 /* 店长推荐.htm */,
+				E65AE2991E0E283200611DA4 /* 店长推荐_files */,
+			);
+			path = dirName;
+			sourceTree = "<group>";
+		};
+		E65AE2991E0E283200611DA4 /* 店长推荐_files */ = {
+			isa = PBXGroup;
+			children = (
+				E65AE29A1E0E283200611DA4 /* 201610111037187915_big.jpg */,
+				E65AE29B1E0E283200611DA4 /* 201611151601072517_big.jpg */,
+				E65AE29C1E0E283200611DA4 /* 201611231516338491_big.jpg */,
+				E65AE29D1E0E283200611DA4 /* 201611241031267859_big.jpg */,
+				E65AE29E1E0E283200611DA4 /* 201611241226190396_big.jpg */,
+				E65AE29F1E0E283200611DA4 /* 201612041424242811_big.jpg */,
+				E65AE2A01E0E283200611DA4 /* 201612061046318572_big.jpg */,
+				E65AE2A11E0E283200611DA4 /* 201612061503039353_big.jpg */,
+				E65AE2A21E0E283200611DA4 /* 201612061621335064_big.jpg */,
+				E65AE2A31E0E283200611DA4 /* 201612081711353636_big.jpg */,
+				E65AE2A41E0E283200611DA4 /* base.css */,
+				E65AE2A51E0E283200611DA4 /* detail.css */,
+				E65AE2A61E0E283200611DA4 /* dztj.jpg */,
+				E65AE2A71E0E283200611DA4 /* jquery-1.7.2.min.js */,
+				E65AE2A81E0E283200611DA4 /* juicer-min.js */,
+				E65AE2A91E0E283200611DA4 /* u84.png */,
+			);
+			path = "店长推荐_files";
+			sourceTree = "<group>";
+		};
+		E65AE2AA1E0E283200611DA4 /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				E65AE2AB1E0E283200611DA4 /* copy-template-build-step.js */,
+				E65AE2AC1E0E283200611DA4 /* node_modules */,
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
+		E65AE2AC1E0E283200611DA4 /* node_modules */ = {
+			isa = PBXGroup;
+			children = (
+				E65AE2AD1E0E283200611DA4 /* shelljs */,
+			);
+			path = node_modules;
+			sourceTree = "<group>";
+		};
+		E65AE2AD1E0E283200611DA4 /* shelljs */ = {
+			isa = PBXGroup;
+			children = (
+				E65AE2AE1E0E283200611DA4 /* .documentup.json */,
+				E65AE2AF1E0E283200611DA4 /* .jshintrc */,
+				E65AE2B01E0E283200611DA4 /* .npmignore */,
+				E65AE2B11E0E283200611DA4 /* .travis.yml */,
+				E65AE2B21E0E283200611DA4 /* bin */,
+				E65AE2B41E0E283200611DA4 /* global.js */,
+				E65AE2B51E0E283200611DA4 /* LICENSE */,
+				E65AE2B61E0E283200611DA4 /* make.js */,
+				E65AE2B71E0E283200611DA4 /* package.json */,
+				E65AE2B81E0E283200611DA4 /* README.md */,
+				E65AE2B91E0E283200611DA4 /* RELEASE.md */,
+				E65AE2BA1E0E283200611DA4 /* scripts */,
+				E65AE2BD1E0E283200611DA4 /* shell.js */,
+				E65AE2BE1E0E283200611DA4 /* src */,
+			);
+			path = shelljs;
+			sourceTree = "<group>";
+		};
+		E65AE2B21E0E283200611DA4 /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				E65AE2B31E0E283200611DA4 /* shjs */,
+			);
+			path = bin;
+			sourceTree = "<group>";
+		};
+		E65AE2BA1E0E283200611DA4 /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				E65AE2BB1E0E283200611DA4 /* generate-docs.js */,
+				E65AE2BC1E0E283200611DA4 /* run-tests.js */,
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
+		E65AE2BE1E0E283200611DA4 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E65AE2BF1E0E283200611DA4 /* cat.js */,
+				E65AE2C01E0E283200611DA4 /* cd.js */,
+				E65AE2C11E0E283200611DA4 /* chmod.js */,
+				E65AE2C21E0E283200611DA4 /* common.js */,
+				E65AE2C31E0E283200611DA4 /* cp.js */,
+				E65AE2C41E0E283200611DA4 /* dirs.js */,
+				E65AE2C51E0E283200611DA4 /* echo.js */,
+				E65AE2C61E0E283200611DA4 /* error.js */,
+				E65AE2C71E0E283200611DA4 /* exec.js */,
+				E65AE2C81E0E283200611DA4 /* find.js */,
+				E65AE2C91E0E283200611DA4 /* grep.js */,
+				E65AE2CA1E0E283200611DA4 /* ln.js */,
+				E65AE2CB1E0E283200611DA4 /* ls.js */,
+				E65AE2CC1E0E283200611DA4 /* mkdir.js */,
+				E65AE2CD1E0E283200611DA4 /* mv.js */,
+				E65AE2CE1E0E283200611DA4 /* popd.js */,
+				E65AE2CF1E0E283200611DA4 /* pushd.js */,
+				E65AE2D01E0E283200611DA4 /* pwd.js */,
+				E65AE2D11E0E283200611DA4 /* rm.js */,
+				E65AE2D21E0E283200611DA4 /* sed.js */,
+				E65AE2D31E0E283200611DA4 /* tempdir.js */,
+				E65AE2D41E0E283200611DA4 /* test.js */,
+				E65AE2D51E0E283200611DA4 /* to.js */,
+				E65AE2D61E0E283200611DA4 /* toEnd.js */,
+				E65AE2D71E0E283200611DA4 /* which.js */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		E65AE2D91E0E29ED00611DA4 /* 原生地图高仿饿了么 */ = {
+			isa = PBXGroup;
+			children = (
+				E60522E91E0912B200B1CA21 /* NativeMapVC.h */,
+				E60522EA1E0912B200B1CA21 /* NativeMapVC.m */,
+			);
+			name = "原生地图高仿饿了么";
+			sourceTree = "<group>";
+		};
+		E65AE2DA1E0E2A0000611DA4 /* WkWebView */ = {
+			isa = PBXGroup;
+			children = (
+				E65AE2DB1E0E2A3900611DA4 /* WkWebViewController.h */,
+				E65AE2DC1E0E2A3900611DA4 /* WkWebViewController.m */,
+			);
+			name = WkWebView;
+			sourceTree = "<group>";
+		};
 		E67865181D8E25550094237E /* Request */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,6 +624,7 @@
 				E61394461D8786ED00E98943 /* Resources */,
 				19D952887BD024070036ED0B /* [CP] Embed Pods Frameworks */,
 				7E5D6A4E4367D3CC7908FDEB /* [CP] Copy Pods Resources */,
+				E65AE2D81E0E286200611DA4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -522,6 +729,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E65AE2551E0D38C900611DA4 /* image.png in Resources */,
 				E678651D1D8ECB980094237E /* 引导一.jpg in Resources */,
 				E613945E1D8786EE00E98943 /* LaunchScreen.storyboard in Resources */,
 				E613945B1D8786EE00E98943 /* Assets.xcassets in Resources */,
@@ -665,6 +873,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		E65AE2D81E0E286200611DA4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "NODEJS_PATH=/usr/local/bin; NVM_NODE_PATH=~/.nvm/versions/node/`nvm version 2>/dev/null`/bin; N_NODE_PATH=`find /usr/local/n/versions/node/* -maxdepth 0 -type d 2>/dev/null | tail -1`/bin; XCODE_NODE_PATH=`xcode-select --print-path`/usr/share/xcs/Node/bin; PATH=$NODEJS_PATH:$NVM_NODE_PATH:$N_NODE_PATH:$XCODE_NODE_PATH:$PATH && node BaseApplication_demo/scripts/copy-template-build-step.js";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -694,6 +915,7 @@
 				E61394A31D878CF300E98943 /* MyNavigationController.m in Sources */,
 				E6716A5E1D90D8B2009A22D9 /* Entity1.m in Sources */,
 				E61394A61D878CF300E98943 /* SecondViewController.m in Sources */,
+				E65AE2DD1E0E2A3900611DA4 /* WkWebViewController.m in Sources */,
 				E613944D1D8786ED00E98943 /* main.m in Sources */,
 				E678651B1D8E25C20094237E /* Request.m in Sources */,
 				E61394B71D87A9C700E98943 /* RetryView.m in Sources */,
@@ -836,6 +1058,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 78EEB5CBEE6DF115F16FBE35 /* Pods-BaseApplication_demo.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TEA4KWX63Q;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BaseApplication_demo/BasePCH.pch";
 				INFOPLIST_FILE = BaseApplication_demo/Info.plist;
@@ -850,6 +1073,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B73A2D8202FEF1624E1F02D0 /* Pods-BaseApplication_demo.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TEA4KWX63Q;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BaseApplication_demo/BasePCH.pch";
 				INFOPLIST_FILE = BaseApplication_demo/Info.plist;

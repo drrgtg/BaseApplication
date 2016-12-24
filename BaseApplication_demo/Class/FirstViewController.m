@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import "NativeMapVC.h"
+#import "WkWebViewController.h"
 
 
 #define FIRST_TABLE_CELL_ID     @"FIRST_TABLE_CELL_ID"
@@ -66,7 +67,12 @@ UITableViewDelegate
             [self.navigationController pushViewController:vc animated:YES];
         }
         break;
-        
+        case 1:
+        {
+            WkWebViewController *vc = [[WkWebViewController alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
         default:
         break;
     }

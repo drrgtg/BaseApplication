@@ -25,7 +25,7 @@
     {
         self.seletedIndex = 0;
         self.textColor = [UIColor darkTextColor];
-        self.selectedColor = [UIColor greenColor];
+        self.selectedColor = [UIColor redColor];
         self.tintColor = [UIColor whiteColor];
         self.textFont = [UIFont systemFontOfSize:15];
         self.textBtnArray = [NSMutableArray array];

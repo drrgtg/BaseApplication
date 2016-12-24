@@ -38,7 +38,7 @@ UNUserNotificationCenterDelegate
         [appearance setTitleTextAttributes:dic];
         [appearance setBarTintColor:[UIColor orangeColor]];
         [appearance setTintColor:[UIColor whiteColor]];
-        [appearance setBackgroundImage:[UIImage rectImageWithColor:[UIColor orangeColor] andRect:CGSizeMake(SCREEN_WIDTH, 64)] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+        [appearance setBackgroundImage:[UIImage rectImageWithColor:UIColorFromRGB(0x0085F4) andRect:CGSizeMake(SCREEN_WIDTH, 64)] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
         [appearance setShadowImage:[[UIImage alloc] init]];
     }
     

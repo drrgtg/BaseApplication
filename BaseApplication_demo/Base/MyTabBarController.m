@@ -43,11 +43,11 @@
     self.secondVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"二页" image:[UIImage imageNamed:@"tab_search"] selectedImage:[UIImage imageNamed:@"tab_search_hot"]];
     self.thirdVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"三页" image:[UIImage imageNamed:@"tab_profile"] selectedImage:[UIImage imageNamed:@"tab_profile_hot"]];
     
-    self.tabBar.tintColor = [UIColor blackColor];
+    self.tabBar.tintColor = UIColorFromRGB(0x0085F4) ;
     //titile
-    self.firstVC.navigationItem.title = @"First";
-    self.secondVC.navigationItem.title = @"Second";
-    self.thirdVC.navigationItem.title = @"Thirty";
+    self.firstVC.navigationItem.title = @"我是第一页";
+    self.secondVC.navigationItem.title = @"我是第二页";
+    self.thirdVC.navigationItem.title = @"我是第三页";
     //ViewControllers
     self.viewControllers = @[nav1,nav2,nav3];
 

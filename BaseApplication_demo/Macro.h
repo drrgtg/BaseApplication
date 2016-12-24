@@ -30,8 +30,10 @@
  */
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
-
+//弱引用
 #define WeakSelf     typeof(self) __weak weakSelf = self;
+//强引用
+#define STRONG_SELF typeof(weakSelf) __strong strongSelf = weakSelf ;
 
 
 

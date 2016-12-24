@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0080)http://app.read591.com:8080/api/shop/wap!recommend.do?storeId=13&device=andorid# -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,target-densitydpi=high-dpi">
+            <link rel="stylesheet" type="text/css" href="./店长推荐_files/detail.css">
+                <link rel="stylesheet" type="text/css" href="./店长推荐_files/base.css">
+                    <script type="text/javascript" src="./店长推荐_files/jquery-1.7.2.min.js"></script>
+                    <script type="text/javascript" src="./店长推荐_files/juicer-min.js"></script>
+                    <script type="text/javascript">
+                        var hasMore = true;
+                        var anchor = 1;
+                        var currentTimeStr = "";
+                        juicer.set({
+                                   'tag::interpolateOpen': '$J{',
+                                   'tag::noneencodeOpen': '$$J{'
+                                   });
+                                   $(document).ready(function(){
+                                                     more();
+                                                     });
+                                                     
+                                                     function dialog(gid){
+                                                         window.webkit.messageHandlers.NativeMethod.postMessage({"gid":gid});
+                                                     }
+                    function more(){
+                        alert("调用了webView的方法哦");
+                        return
+                        if(!hasMore){
+                            //alert("没有更多了");
+                            $("#div_end").show();
+                            return ;
+                        }
+                        $("#div_loading").show();
+                        var postData = {};
+                        postData.anchor = anchor;
+                        postData.currentTimeStr = currentTimeStr;
+                        postData.storeId = '13';
+                        $.ajax({
+                               url: "/api/shop/goodsShowcase!recommendForWap.do",
+                               data: postData,
+                               type: "post",
+                               //async: true,
+                               dataType: "json",
+                               success: function(json){
+                               if(json.result==1){
+                               var _model = $("#model_recommendList").html();
+                               var _html = juicer(_model, json.data);
+                               if(json.data.anchor>anchor){
+                               hasMore = json.data.hasMore;
+                               anchor = json.data.anchor;
+                               currentTimeStr = json.data.currentTimeStr;
+                               $("#div_loading").before(_html);
+                               $("#div_loading").hide();
+                               if(!hasMore){
+                               //alert("没有更多了");
+                               $("#div_end").show();
+                               }
+                               }
+                               }
+                               }
+                               });
+                    }
+                    </script>
+                    <title>店长推荐</title>
+</head><body><div id="m_common_header"></div>
+    
+    
+    
+    <div id="div_display" class="good-detail sift-mg sift-mg-tj">
+        <div><img src="./店长推荐_files/dztj.jpg"></div>
+        <div class="book-container-item">   <h3 class="Date">12月12日   星期一</h3>  </div>     <div class="special">   <div class="book-container-item">    <span class="book-item-title"><i style="color: #b81c22;border: 1px solid #b81c22;">1</i>共读，我们的亲子时光</span><br>    <p class="book-item-content"></p>    <p>最好的教育是陪伴，最好的陪伴是阅读，十六年亲子共读陪伴，十六年书香家庭故事。</p>   </div>      <div class="book-container-item">    <a  onclick="dialog(2889)"><img style="width:100%;" src="./店长推荐_files/201612081711353636_big.jpg"></a>   </div>      <div class="purchase">    <div class="right">     <a style="background: #b81c22;"  onclick="dialog(2889)">查看详情</a>    </div>    <div class="left">     <em tittle="喜欢"><img style="width:27px;" src="./店长推荐_files/u84.png"></em>     <span style=" margin-left: 3px; color: #999999; ">1</span>    </div>    <div class="clear"></div>   </div>  </div>     <div class="book-container-item">   <h3 class="Date">12月08日   星期四</h3>  </div>     <div class="special">   <div class="book-container-item">    <span class="book-item-title"><i style="color: #b81c22;border: 1px solid #b81c22;">2</i>中国历史全知道（图文精装）</span><br>    <p class="book-item-content"></p>    <p>中国历史绵远流长、波涛汹涌，既有繁荣辉煌，也有曲折艰难；既有濯濯光明，也有血腥黑暗。为了反映历史的真相，让读者更加科学全面地解读历史，邢群麟著的《中国历史全知道(精)》中采用“全史”体例，融正史、野史、秘史于一体，分为“通史博览”“野史追踪”“秘史探究”三篇，全方位、新视角、多层面地讲述中国历史。它不仅给读者提供了认识历史的望远镜、显微镜、放大镜和透视镜，更重要的是倡导一种全新的观察历史的方法、思考历史的方式，给读者一双穿过重重迷雾、看透历史的慧眼。
+            不仅如此，书中还精心选配了数百幅内容涵盖面广、表现形式丰富的图片，包括出土文物、历史遗迹、战争示意图、名人画像等，以大量精美图片传史之真，证史之实，辨史之误，同时使事件、人物更加立体丰满，并充满场景感。力求通过图文的紧密结合为读者提供一条回归历史真实的通途，做到融知识性、可读性、观赏性于一体。</p>   </div>      <div class="book-container-item">    <a  onclick="dialog(2646)"><img style="width:100%;" src="./店长推荐_files/201612061621335064_big.jpg"></a>   </div>      <div class="purchase">    <div class="right">     <a style="background: #b81c22;"  onclick="dialog(2646)">查看详情</a>    </div>    <div class="left">     <em tittle="喜欢"><img style="width:27px;" src="./店长推荐_files/u84.png"></em>     <span style=" margin-left: 3px; color: #999999; ">0</span>    </div>    <div class="clear"></div>   </div>  </div>     <div class="book-container-item">   <h3 class="Date">12月07日   星期三</h3>  </div>     <div class="special">   <div class="book-container-item">    <span class="book-item-title"><i style="color: #b81c22;border: 1px solid #b81c22;">3</i>一百个人的十年(精装）</span><br>    <p class="book-item-content"></p>    <p>“文革”已经过去，它对众多人的生活产生了深刻的影响。“文革”是什么？“文革”的真相到底是什么？“文革”到底对人产生了什么样的影响？《一百的人的十年》为我们似乎提供了一个清晰的答案。作者冯骥才试图以一百个各不相同的经历，尽可能反映这一经历十年、全社会大劫难异常复杂的全貌。通过记录普通人的经历，反映生活本质的真实。这本书将使“文革”的受难者们感受到某种东西以使内心获得宁静，使那些“文革”的制造者们从中受到人类良知的提醒而引起终生不安。</p>   </div>      <div class="book-container-item">    <a  onclick="dialog(2563)"><img style="width:100%;" src="./店长推荐_files/201612061046318572_big.jpg"></a>   </div>      <div class="purchase">    <div class="right">     <a style="background: #b81c22;"  onclick="dialog(2563)">查看详情</a>    </div>    <div class="left">     <em tittle="喜欢"><img style="width:27px;" src="./店长推荐_files/u84.png"></em>     <span style=" margin-left: 3px; color: #999999; ">0</span>    </div>    <div class="clear"></div>   </div>  </div>     <div class="book-container-item">   <h3 class="Date">12月06日   星期二</h3>  </div>     <div class="special">   <div class="book-container-item">    <span class="book-item-title"><i style="color: #b81c22;border: 1px solid #b81c22;">4</i>墨点字帖:你的时光习字小笺.古代诗词·行书</span><br>    <p class="book-item-content"></p>    <p>编入中外名人名言，分类编排设计。配入四色图片和文字，集摹、描和临三种功能于一体，集欣赏和练字于一体，是一本多功能的硬笔字帖。</p>   </div>      <div class="book-container-item">    <a  onclick="dialog(2492)"><img style="width:100%;" src="./店长推荐_files/201612061503039353_big.jpg"></a>   </div>      <div class="purchase">    <div class="right">     <a style="background: #b81c22;"  onclick="dialog(2492)">查看详情</a>    </div>    <div class="left">     <em tittle="喜欢"><img style="width:27px;" src="./店长推荐_files/u84.png"></em>     <span style=" margin-left: 3px; color: #999999; ">1</span>    </div>    <div class="clear"></div>   </div>  </div>     <div class="book-container-item">   <h3 class="Date">12月05日   星期一</h3>  </div>     <div class="special">   <div class="book-container-item">    <span class="book-item-title"><i style="color: #b81c22;border: 1px solid #b81c22;">5</i>哈佛理财课</span><br>    <p class="book-item-content"></p>    <p>《哈佛理财课》总结了哈佛名师所讲述的理财知识，并结合中国的实际情况进行分析，力求使人们改变财富积累方式，摆脱金钱的奴役。哈佛教导出来的青年人，在后来的生活中都很富有，因为哈佛不仅向他们传授了理财技巧，而且帮他们树立了正确的理财观念。就像金融大鳄索罗斯的名言：“理财永远是一种思维方法，而不是简单的技巧。”</p>   </div>      <div class="book-container-item">    <a   onclick="dialog(2433)"><img style="width:100%;" src="./店长推荐_files/201612041424242811_big.jpg"></a>   </div>      <div class="purchase">    <div class="right">     <a style="background: #b81c22;"
+                onclick="dialog(2433)">查看详情</a>    </div>    <div class="left">     <em tittle="喜欢"><img style="width:27px;" src="./店长推荐_files/u84.png"></em>     <span style=" margin-left: 3px; color: #999999; ">0</span>    </div>    <div class="clear"></div>   </div>  </div>     <div class="book-container-item">   <h3 class="Date">12月02日   星期五</h3>  </div>     <div class="special">   <div class="book-container-item">    <span class="book-item-title"><i style="color: #b81c22;border: 1px solid #b81c22;">6</i>精装无障碍读经典 •  庄子</span><br>    <p class="book-item-content"></p>    <p>《无障碍读经典》是一套真正意义上的无障碍阅读丛书，编写者将原文中生僻的字、词进行随文注释，个别难以理解的句子、典故及其他相关知识
+                以“阅读指导”的形式列于相应的段落之后，原文与译文以同页内左右对应的形式进行排版，大程度上保证读者阅读的连续性和方便性，实现无
+                障碍快乐阅读。</p>   </div>      <div class="book-container-item">    <a
+                    onclick="dialog(498)"><img style="width:100%;" src="./店长推荐_files/201610111037187915_big.jpg"></a>   </div>      <div class="purchase">    <div class="right">     <a style="background: #b81c22;"
+                        onclick="dialog(498)">查看详情</a>    </div>    <div class="left">     <em tittle="喜欢"><img style="width:27px;" src="./店长推荐_files/u84.png"></em>     <span style=" margin-left: 3px; color: #999999; ">0</span>    </div>    <div class="clear"></div>   </div>  </div>     <div class="book-container-item">   <h3 class="Date">12月01日   星期四</h3>  </div>     <div class="special">   <div class="book-container-item">    <span class="book-item-title"><i style="color: #b81c22;border: 1px solid #b81c22;">7</i>城南旧事</span><br>    <p class="book-item-content"></p>    <p>《城南旧事》描述了20世纪20年代一个六岁女孩英子的童年故事。
+                    惠安馆的疯女人，井边的小伴侣，藏在草堆里的小偷，斜着嘴笑的兰姨娘，骑着小驴回老家的宋妈……老北京城南的童年温暖而精彩，也伴随着感伤的离别和成长的阵痛。
+                    作家林海音真挚无邪的行文将孩子对成人世界的好奇和困惑、对友人离别的感伤与想念，描摹得淋漓尽致，感动了一代又一代的读者。</p>   </div>      <div class="book-container-item">    <a
+                        onclick="dialog(2036)"><img style="width:100%;" src="./店长推荐_files/201611241031267859_big.jpg"></a>   </div>      <div class="purchase">    <div class="right">     <a style="background: #b81c22;"
+                        onclick="dialog(2036)">查看详情</a>    </div>    <div class="left">     <em tittle="喜欢"><img style="width:27px;" src="./店长推荐_files/u84.png"></em>     <span style=" margin-left: 3px; color: #999999; ">0</span>    </div>    <div class="clear"></div>   </div>  </div>     <div class="book-container-item">   <h3 class="Date">11月30日   星期三</h3>  </div>     <div class="special">   <div class="book-container-item">    <span class="book-item-title"><i style="color: #b81c22;border: 1px solid #b81c22;">8</i>隋智永真草千字文</span><br>    <p class="book-item-content"></p>    <p>随着国学热及中小学传统书法课程的越来越普及，传统字帖碑帖类书籍越来越受到读者欢迎。本系列是当代书法篆刻名家洪亮根据多年艺术研习造诣，总结书法创作规律，为广大书法爱好者及中小学生编写而成。全书精心选择了一系列最 具代表性的楷书、行书、草书碑帖，将这些稀世珍宝以精美的形式清晰地展现在书法爱好者眼前，同时加以讲解点拨分析，使读者能清晰了解这些佳作运笔的走势、笔法的交搭、节奏的细微变化，感悟其中的奥秘，从而提升自己的书法造诣，受益无穷。
+                        全书分为楷书、行书、草书三辑，每辑选择了五种最 具代表性的传世碑帖，除了原帖精放之外，书中还包括作者对碑帖谋篇布局、遣字用笔的分析，以及最针对性的临摹练习，让读者经历赏——悟——临的完整学习过程。
+                        全套书选择精放呈现，颇具科学性与专业性，原帖笔画尺度一般较小，原大临摹时，笔尖一触纸，不等操纵毛笔完成应有的动作，已经到达应有的粗细，起不到练习的作用，但是如果临写扩放过大，笔画内部运动的方式便完全改变，那也已经不是真正意义上的临摹了。因此，本书的尺寸相对市场同类书更为精准，易学易摹。
+                        此外，本套书除了兼顾书法爱好者之外，更考虑到中小学生练习的需要，介绍了一系列相关背景知识与基础要领，让初学的孩子也能顺利掌握。</p>   </div>      <div class="book-container-item">    <a
+                            onclick="dialog(1808)"><img style="width:100%;" src="./店长推荐_files/201611151601072517_big.jpg"></a>   </div>      <div class="purchase">    <div class="right">     <a style="background: #b81c22;"
+                                onclick="dialog(1808)">查看详情</a>    </div>    <div class="left">     <em tittle="喜欢"><img style="width:27px;" src="./店长推荐_files/u84.png"></em>     <span style=" margin-left: 3px; color: #999999; ">0</span>    </div>    <div class="clear"></div>   </div>  </div>     <div class="book-container-item">   <h3 class="Date">11月28日   星期一</h3>  </div>     <div class="special">   <div class="book-container-item">    <span class="book-item-title"><i style="color: #b81c22;border: 1px solid #b81c22;">9</i>我不是潘金莲（典藏版）</span><br>    <p class="book-item-content"></p>    <p>范冰冰主演同名电影《我不是潘金莲》原著。
+                            当代著名作家刘震云获“茅奖”后的第一部长篇，也是他第一部以女性为主角的小说。直逼现实，书写民苦，使这部小说成为《一句顶一万句》的姊妹篇。
+                            和《一句顶一万句》一样，故事都是写一个戴了绿帽子的人想杀人，其实不过是想在人群中找到能说上话的人，不同的是，这本书中是一个戴绿帽子的女人，从杀人到折腾人，不过是想在人群中纠正一句话。</p>   </div>      <div class="book-container-item">    <a
+                                onclick="dialog(2042)"><img style="width:100%;" src="./店长推荐_files/201611241226190396_big.jpg"></a>   </div>      <div class="purchase">    <div class="right">     <a style="background: #b81c22;"
+                                    onclick="dialog(2042)">查看详情</a>    </div>    <div class="left">     <em tittle="喜欢"><img style="width:27px;" src="./店长推荐_files/u84.png"></em>     <span style=" margin-left: 3px; color: #999999; ">0</span>    </div>    <div class="clear"></div>   </div>  </div>     <div class="book-container-item">   <h3 class="Date">11月24日   星期四</h3>  </div>     <div class="special">   <div class="book-container-item">    <span class="book-item-title"><i style="color: #b81c22;border: 1px solid #b81c22;">10</i>小顾聊神话</span><br>    <p class="book-item-content"></p>    <p>《小顾聊神话》内容简介:超人气艺术普及作家顾爷！带你走进西方古典艺术的源头——希腊神话！艺术入门必备指南！360度紧致提拉你的艺术逼格!开启全民艺术狂欢!
+                                拜伦说：如果我是一个诗人，是希腊的空气造就了我。
+                                雪莱说：我们全都是希腊人。我们的法律、我们的文学、我们的宗教，根源皆在希腊。
+                                顾爷说：希腊神话就是一部包含了血腥、暴力、乱伦、钩心斗角和同性恋的情景剧！</p>   </div>      <div class="book-container-item">    <a
+                                    onclick="dialog(2015)"><img style="width:100%;" src="./店长推荐_files/201611231516338491_big.jpg"></a>   </div>      <div class="purchase">    <div class="right">     <a style="background: #b81c22;"
+                                        onclick="dialog(2015)">查看详情</a>    </div>    <div class="left">     <em tittle="喜欢"><img style="width:27px;" src="./店长推荐_files/u84.png"></em>     <span style=" margin-left: 3px; color: #999999; ">0</span>    </div>    <div class="clear"></div>   </div>  </div>   <div id="div_loading" style="display: none;" class="more End">
+                                    <span>加载更多...</span>
+                                </div>
+                                <div id="div_end" style="display:none;" class="no-more End">
+                                    <span>没有更多了</span>
+                                </div>
+    </div>
+    <script id="model_recommendList" type="text/template">
+        {@each datas as ele}
+        {@if ele.isTime}
+        <div class="book-container-item">
+        <h3 class="Date">$J{ele.timeStr}</h3>
+        </div>
+        {@else}
+        <div class="special">
+        <div class="book-container-item">
+        <span class="book-item-title"><i style="color: #b81c22;border: 1px solid #b81c22;">$J{ele.index}</i>$J{ele.name}</span><br />
+        <p class="book-item-content"></p>
+        <p>$J{ele.slogan}</p>
+        </div>
+        {@if ele.image!=null}
+        <div class="book-container-item">
+        <a href="#" onclick="dialog($J{ele.id})"><img style="width:100%;" src="$J{ele.image}" /></a>
+        </div>
+        {@/if}
+        <div class="purchase">
+        <div class="right">
+        <a style="background: #b81c22;" href="#" onclick="dialog($J{ele.id})">查看详情</a>
+        </div>
+        <div class="left">
+        <em tittle="喜欢"><img style="width:27px;" src="/mobile/img/u84.png?v=12.12.30"></em>
+        <span style=" margin-left: 3px; color: #999999; ">$J{ele.likecount}</span>
+        </div>
+        <div class="clear"></div>
+        </div>
+        </div>
+        {@/if}
+        {@/each}
+        </script>
+    
+    
+    
+</body></html>
