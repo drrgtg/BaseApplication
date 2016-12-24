@@ -44,6 +44,9 @@ UNUserNotificationCenterDelegate
     
 }
 
+/**
+ 注册远程推送
+ */
 - (void)registerRemoteNotifaction
 {
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 10.0) {
@@ -76,6 +79,28 @@ UNUserNotificationCenterDelegate
     [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
+/**
+ 3D Touch
+ */
+- (void)creatShortcutItem
+{
+    //创建系统风格的icon
+    UIApplicationShortcutIcon *icon = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeLocation];
+    
+    //    //创建自定义图标的icon,图标格式35x35像素单色
+//    UIApplicationShortcutIcon *icon = [UIApplicationShortcutIcon iconWithTemplateImageName:@"weizhi"];
+    
+    //创建快捷选项
+    UIApplicationShortcutItem * item1 = [[UIApplicationShortcutItem alloc] initWithType:@"com.LSP.item1" localizedTitle:@"谁去拿外卖" localizedSubtitle:nil icon:icon userInfo:nil];
+    //创建快捷选项
+    UIApplicationShortcutItem * item2= [[UIApplicationShortcutItem alloc] initWithType:@"com.LSP.item2" localizedTitle:@"我的红包" localizedSubtitle:nil icon:icon userInfo:nil];//创建快捷选项
+    UIApplicationShortcutItem * item3 = [[UIApplicationShortcutItem alloc] initWithType:@"com.LSP.item3" localizedTitle:@"我的订单" localizedSubtitle:nil icon:icon userInfo:nil];//创建快捷选项
+    UIApplicationShortcutItem * item4 = [[UIApplicationShortcutItem alloc] initWithType:@"com.LSP.item4" localizedTitle:@"手气不错" localizedSubtitle:nil icon:icon userInfo:nil];
+    //创建快捷选项
+    UIApplicationShortcutItem * item5 = [[UIApplicationShortcutItem alloc] initWithType:@"com.LSP.item5" localizedTitle:@"分享“饿了么”" localizedSubtitle:nil icon:icon userInfo:nil];
+    //添加到快捷选项数组1
+    [UIApplication sharedApplication].shortcutItems = @[item1,item2,item3,item4,item5];
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
@@ -94,6 +119,8 @@ UNUserNotificationCenterDelegate
     [self registerRemoteNotifaction];
     //appearance Setting
     [self appearanceSetting];
+    
+    [self creatShortcutItem];
     return YES;
 }
 

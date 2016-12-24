@@ -51,6 +51,8 @@
 	<string>是否允许此App获取本地相册功能</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>是否允许此App使用语音识别</string>
+	<key>UIA</key>
+	<string></string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>

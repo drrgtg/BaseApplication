@@ -66,6 +66,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E65AE2F31E0E70E900611DA4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		36A6220473EA50A304F3DAEB /* Pods-BaseApplication_demoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseApplication_demoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseApplication_demoUITests/Pods-BaseApplication_demoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		68EA0F68C1962FE48DF6667F /* Pods-BaseApplication_demoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseApplication_demoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseApplication_demoTests/Pods-BaseApplication_demoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -198,6 +211,7 @@
 		E65AE2D71E0E283200611DA4 /* which.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = which.js; sourceTree = "<group>"; };
 		E65AE2DB1E0E2A3900611DA4 /* WkWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WkWebViewController.h; sourceTree = "<group>"; };
 		E65AE2DC1E0E2A3900611DA4 /* WkWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WkWebViewController.m; sourceTree = "<group>"; };
+		E65AE2E31E0E70E900611DA4 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		E6716A571D90D86D009A22D9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E6716A591D90D8B2009A22D9 /* Entity1+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Entity1+CoreDataProperties.h"; path = "../Class/Entity1+CoreDataProperties.h"; sourceTree = "<group>"; };
 		E6716A5A1D90D8B2009A22D9 /* Entity1+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Entity1+CoreDataProperties.m"; path = "../Class/Entity1+CoreDataProperties.m"; sourceTree = "<group>"; };
@@ -261,6 +275,7 @@
 				80C6B11F7D0730585DEC2FAF /* libPods-BaseApplication_demo.a */,
 				7718B3558CC548B154C91A25 /* libPods-BaseApplication_demoTests.a */,
 				6B3775D9E96ADA80DC5AF473 /* libPods-BaseApplication_demoUITests.a */,
+				E65AE2E31E0E70E900611DA4 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -625,6 +640,7 @@
 				19D952887BD024070036ED0B /* [CP] Embed Pods Frameworks */,
 				7E5D6A4E4367D3CC7908FDEB /* [CP] Copy Pods Resources */,
 				E65AE2D81E0E286200611DA4 /* ShellScript */,
+				E65AE2F31E0E70E900611DA4 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
