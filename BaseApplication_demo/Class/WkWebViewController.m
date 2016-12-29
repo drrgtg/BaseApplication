@@ -17,6 +17,9 @@ WKScriptMessageHandler
 >
 
 @property (strong, nonatomic) WKWebView   *webView;
+
+@property (strong, nonatomic) CALayer   *progresslayer;
+
 @end
 
 @implementation WkWebViewController
@@ -26,19 +29,36 @@ WKScriptMessageHandler
 {
     [super viewDidLoad];
     [self.view addSubview:self.webView];
-    NSURLRequest  *req=[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"dirName/店长推荐.htm"]]];
+//    NSURLRequest  *req=[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"dirName/店长推荐.htm"]]];
     
+    NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://113.247.226.76:8080/api/shop/wap!goodsDetail.do?storeId=13&goodsId=3962&device=ios&isInApp=true"]];
     
     [self.webView loadRequest:req];
     
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(clickRight)];
     self.navigationItem.rightBarButtonItem = rightItem;
     
+    ///添加进度条
+    [self addProgress];
+    
+}
+#pragma mark ------------进度条 -------------- 
+- (void)addProgress
+{
+    UIView *progress = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 2)];
+    progress.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:progress];
+    
+    CALayer *layer = [CALayer layer];
+    layer.frame = CGRectMake(0, 0, 0, 2);
+    layer.backgroundColor = [UIColor orangeColor].CGColor;
+    [progress.layer addSublayer:layer];
+    self.progresslayer = layer;
 }
 - (void)clickRight
 {
-    [self.webView evaluateJavaScript:@"more()" completionHandler:^(id _Nullable obj, NSError * _Nullable error) {
-        
+    [self.webView evaluateJavaScript:@"getInfo()" completionHandler:^(id _Nullable obj, NSError * _Nullable error) {
+        NSLog(@"%@",obj);
     }];
 }
 ///结束的时候移除注册的方法，不然会内存泄露
@@ -48,6 +68,9 @@ WKScriptMessageHandler
     [self removeScriptMessage];
     //清除cookies
     [self clearCookies];
+    //移除观察者
+    [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
+
 }
 
 - (void)clearCookies
@@ -91,12 +114,14 @@ WKScriptMessageHandler
         // 将UserConttentController设置到配置文件
         config.userContentController = userContent;
         
-        _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) configuration:config];
+        _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-64) configuration:config];
         
         
         _webView.navigationDelegate = self;
         _webView.UIDelegate = self;
-        
+        //添加进度观察
+        [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
+
     }
     return _webView;
 }
@@ -144,7 +169,16 @@ WKScriptMessageHandler
  */
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
     NSLog(@"%s",__FUNCTION__);
-    decisionHandler(WKNavigationActionPolicyAllow);
+    //  WKNavigationActionPolicyCancel
+    //  WKNavigationActionPolicyAllow
+    WKNavigationActionPolicy policy =WKNavigationActionPolicyAllow;
+    
+    if ([navigationAction.request.URL.absoluteString hasPrefix:@"fcall"])
+    {
+        policy =WKNavigationActionPolicyCancel;
+        NSLog(@"%@",navigationAction.request.URL.absoluteString );
+    }
+    decisionHandler(policy);
     
 }
 
@@ -343,5 +377,28 @@ WKScriptMessageHandler
 -(void)printerNow
 {
     NSLog(@"%s",__FUNCTION__);
+}
+
+
+#pragma mark ------------observer   for KVO --------------
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
+    if ([keyPath isEqualToString:@"estimatedProgress"]) {
+        self.progresslayer.opacity = 1;
+        //不要让进度条倒着走...有时候goback会出现这种情况
+        if ([change[@"new"] floatValue] < [change[@"old"] floatValue]) {
+            return;
+        }
+        self.progresslayer.frame = CGRectMake(0, 0, self.view.bounds.size.width * [change[@"new"] floatValue], 2);
+        if ([change[@"new"] floatValue] == 1) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                self.progresslayer.opacity = 0;
+            });
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                self.progresslayer.frame = CGRectMake(0, 0, 0, 2);
+            });
+        }
+    }else{
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
 }
 @end

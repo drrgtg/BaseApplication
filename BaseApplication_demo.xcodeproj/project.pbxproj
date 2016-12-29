@@ -14,6 +14,7 @@
 		E60522E51E08FD7A00B1CA21 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E60522E41E08FD7A00B1CA21 /* TableViewController.m */; };
 		E60522EB1E0912B200B1CA21 /* NativeMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E60522EA1E0912B200B1CA21 /* NativeMapVC.m */; };
 		E60522ED1E0916CE00B1CA21 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E60522EC1E0916CE00B1CA21 /* MapKit.framework */; };
+		E60BCF541E110CE6003B97C3 /* JLTools.m in Sources */ = {isa = PBXBuildFile; fileRef = E60BCF531E110CE6003B97C3 /* JLTools.m */; };
 		E613944D1D8786ED00E98943 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E613944C1D8786ED00E98943 /* main.m */; };
 		E61394501D8786ED00E98943 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E613944F1D8786ED00E98943 /* AppDelegate.m */; };
 		E613945B1D8786EE00E98943 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E613945A1D8786EE00E98943 /* Assets.xcassets */; };
@@ -40,6 +41,9 @@
 		E65AE2491E0D23A900611DA4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65AE2481E0D23A900611DA4 /* SystemConfiguration.framework */; };
 		E65AE2551E0D38C900611DA4 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = E65AE24F1E0D38C900611DA4 /* image.png */; };
 		E65AE2DD1E0E2A3900611DA4 /* WkWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E65AE2DC1E0E2A3900611DA4 /* WkWebViewController.m */; };
+		E65AE2F71E0E858500611DA4 /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E65AE2F61E0E858500611DA4 /* QRCodeViewController.m */; };
+		E65AE2FA1E0E8A7B00611DA4 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E65AE2F91E0E8A7A00611DA4 /* ScanViewController.m */; };
+		E65AE2FD1E0E8ACD00611DA4 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E65AE2FC1E0E8ACD00611DA4 /* DiscoverViewController.m */; };
 		E6716A581D90D86D009A22D9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6716A561D90D86D009A22D9 /* Model.xcdatamodeld */; };
 		E6716A5D1D90D8B2009A22D9 /* Entity1+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E6716A5A1D90D8B2009A22D9 /* Entity1+CoreDataProperties.m */; };
 		E6716A5E1D90D8B2009A22D9 /* Entity1.m in Sources */ = {isa = PBXBuildFile; fileRef = E6716A5C1D90D8B2009A22D9 /* Entity1.m */; };
@@ -98,6 +102,8 @@
 		E60522E91E0912B200B1CA21 /* NativeMapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeMapVC.h; sourceTree = "<group>"; };
 		E60522EA1E0912B200B1CA21 /* NativeMapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeMapVC.m; sourceTree = "<group>"; };
 		E60522EC1E0916CE00B1CA21 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E60BCF521E110CE6003B97C3 /* JLTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLTools.h; sourceTree = "<group>"; };
+		E60BCF531E110CE6003B97C3 /* JLTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLTools.m; sourceTree = "<group>"; };
 		E61394481D8786ED00E98943 /* BaseApplication_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseApplication_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E613944C1D8786ED00E98943 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E613944E1D8786ED00E98943 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -212,6 +218,12 @@
 		E65AE2DB1E0E2A3900611DA4 /* WkWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WkWebViewController.h; sourceTree = "<group>"; };
 		E65AE2DC1E0E2A3900611DA4 /* WkWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WkWebViewController.m; sourceTree = "<group>"; };
 		E65AE2E31E0E70E900611DA4 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		E65AE2F51E0E858500611DA4 /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
+		E65AE2F61E0E858500611DA4 /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
+		E65AE2F81E0E8A7A00611DA4 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		E65AE2F91E0E8A7A00611DA4 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
+		E65AE2FB1E0E8ACD00611DA4 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
+		E65AE2FC1E0E8ACD00611DA4 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
 		E6716A571D90D86D009A22D9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E6716A591D90D8B2009A22D9 /* Entity1+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Entity1+CoreDataProperties.h"; path = "../Class/Entity1+CoreDataProperties.h"; sourceTree = "<group>"; };
 		E6716A5A1D90D8B2009A22D9 /* Entity1+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Entity1+CoreDataProperties.m"; path = "../Class/Entity1+CoreDataProperties.m"; sourceTree = "<group>"; };
@@ -286,6 +298,8 @@
 				E60522E11E08D11A00B1CA21 /* CoreData */,
 				E60522DD1E08C20C00B1CA21 /* CLLocManager.h */,
 				E60522DE1E08C20C00B1CA21 /* CLLocManager.m */,
+				E60BCF521E110CE6003B97C3 /* JLTools.h */,
+				E60BCF531E110CE6003B97C3 /* JLTools.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -311,6 +325,7 @@
 				E60522E41E08FD7A00B1CA21 /* TableViewController.m */,
 				E65AE2DA1E0E2A0000611DA4 /* WkWebView */,
 				E65AE2D91E0E29ED00611DA4 /* 原生地图高仿饿了么 */,
+				E65AE2F41E0E855600611DA4 /* 二维码原生 */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -613,6 +628,19 @@
 				E65AE2DC1E0E2A3900611DA4 /* WkWebViewController.m */,
 			);
 			name = WkWebView;
+			sourceTree = "<group>";
+		};
+		E65AE2F41E0E855600611DA4 /* 二维码原生 */ = {
+			isa = PBXGroup;
+			children = (
+				E65AE2F51E0E858500611DA4 /* QRCodeViewController.h */,
+				E65AE2F61E0E858500611DA4 /* QRCodeViewController.m */,
+				E65AE2F81E0E8A7A00611DA4 /* ScanViewController.h */,
+				E65AE2F91E0E8A7A00611DA4 /* ScanViewController.m */,
+				E65AE2FB1E0E8ACD00611DA4 /* DiscoverViewController.h */,
+				E65AE2FC1E0E8ACD00611DA4 /* DiscoverViewController.m */,
+			);
+			name = "二维码原生";
 			sourceTree = "<group>";
 		};
 		E67865181D8E25550094237E /* Request */ = {
@@ -926,9 +954,13 @@
 				E61394CE1D87ED0600E98943 /* UILabel+accelerator.m in Sources */,
 				E61394A71D878CF300E98943 /* ThirdViewController.m in Sources */,
 				E61394C21D87CBFA00E98943 /* UIImage+color.m in Sources */,
+				E65AE2FD1E0E8ACD00611DA4 /* DiscoverViewController.m in Sources */,
 				E61394D11D87ED5A00E98943 /* NSString+accelerator.m in Sources */,
 				E61394CB1D87D3DC00E98943 /* UIViewController+progress.m in Sources */,
+				E60BCF541E110CE6003B97C3 /* JLTools.m in Sources */,
+				E65AE2FA1E0E8A7B00611DA4 /* ScanViewController.m in Sources */,
 				E61394A31D878CF300E98943 /* MyNavigationController.m in Sources */,
+				E65AE2F71E0E858500611DA4 /* QRCodeViewController.m in Sources */,
 				E6716A5E1D90D8B2009A22D9 /* Entity1.m in Sources */,
 				E61394A61D878CF300E98943 /* SecondViewController.m in Sources */,
 				E65AE2DD1E0E2A3900611DA4 /* WkWebViewController.m in Sources */,

@@ -7,8 +7,10 @@
 //
 
 #import "FirstViewController.h"
+
 #import "NativeMapVC.h"
 #import "WkWebViewController.h"
+#import "QRCodeViewController.h"
 
 
 #define FIRST_TABLE_CELL_ID     @"FIRST_TABLE_CELL_ID"
@@ -53,30 +55,42 @@ UITableViewDelegate
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:FIRST_TABLE_CELL_ID];
     }
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.textLabel.text = self.dataSouce[indexPath.row];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    CommonController *pushVC = nil;
+
     switch (indexPath.row)
     {
         case 0:
         {
             NativeMapVC *vc = [[NativeMapVC alloc] init];
-            vc.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:vc animated:YES];
+            pushVC = vc;
         }
         break;
         case 1:
         {
             WkWebViewController *vc = [[WkWebViewController alloc] init];
-            vc.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:vc animated:YES];
+            pushVC = vc;
+
         }
+        break;
+        case 2:
+        {
+            QRCodeViewController *vc = [[QRCodeViewController alloc] init];
+            pushVC = vc;
+        }
+            break;
         default:
         break;
     }
     
+    pushVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:pushVC animated:YES];
+
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -96,7 +110,10 @@ UITableViewDelegate
 {
     if (!_dataSouce)
     {
-        _dataSouce = [NSMutableArray arrayWithObjects:@"原生地图(高仿饿了吗)",@"WKWeb", nil];
+        _dataSouce = [NSMutableArray arrayWithObjects:
+                      @"原生地图(高仿饿了吗)",
+                      @"WKWeb",
+                      @"二维码", nil];
     }
     return _dataSouce;
 }

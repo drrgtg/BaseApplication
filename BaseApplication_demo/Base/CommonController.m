@@ -55,8 +55,8 @@
     
 //    self.hidesBottomBarWhenPushed = YES;
     
-    self.navigationController.interactivePopGestureRecognizer.delegate = self;
-    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+//    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+//    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -115,10 +115,10 @@
     // default, nothing to do, subclass can override it
 }
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
-{
-    return YES;
-}
+//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+//{
+//    return YES;
+//}
 
 
 @end
