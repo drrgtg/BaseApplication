@@ -36,6 +36,7 @@
 #define STRONG_SELF typeof(weakSelf) __strong strongSelf = weakSelf ;
 
 
-
+//  高德地图
+#define GDMPKEY         @"e48f4b1a35f6587de6215a03ecfbb198"
 
 #endif /* Macro_h */

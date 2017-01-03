@@ -12,19 +12,26 @@
 
 -(void)setValue:(id)value forKey:(NSString *)key
 {
-    [super setValue:value forKey:key];
+    NSString *strValue = [NSString stringWithFormat:@"%@",value];
+    [super setValue:strValue forKey:key];
     
 }
 //这里处理objective-c的保留字
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
+    NSString *strValue = [NSString stringWithFormat:@"%@",value];
     if ([key isEqualToString:@"id"])
     {
-        self.modelId = value;
+        self.modelId = strValue;
     }
     else if ([key isEqualToString:@"class"])
     {
-        self.modelClass = value;
+        self.modelClass = strValue;
     }
+    else if ([key isEqualToString:@"new"])
+    {
+        self.modelNew = strValue;
+    }
+    
 }
 @end

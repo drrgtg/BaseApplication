@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MyTabBarController.h"
+#import "JLTools.h"
 
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
@@ -114,6 +115,18 @@ UNUserNotificationCenterDelegate
     [self.window makeKeyAndVisible];
     
     
+    NSLog(@"远程推送：%d",[JLTools isRemoteNotificationAble]);
+    NSLog(@"定位功能：%d",[JLTools isLocationAble]);
+    NSLog(@"相机功能：%d",[JLTools isCameraAble]);
+    NSLog(@"相册功能：%d",[JLTools isPhotographAble]);
+    NSLog(@"麦克风功能：%d",[JLTools isMicroPhoneAble]);
+    NSLog(@"日历功能：%d",[JLTools isAbleCalendar]);
+    NSLog(@"通讯录功能：%d",[JLTools isAbleAddressBook]);
+    NSLog(@"局域网iP：%@",[JLTools currentLanIP]);
+    NSLog(@"当前MAC地址：%@",[JLTools getMacAddress]);
+    NSLog(@"当前网络：%@",[JLTools getNetWorkType]);
+    NSLog(@"当前信号强度：%@",[JLTools getSignalStrength]);
+    NSLog(@"当前系统版本：%f",[JLTools currentDeviceVersion]);
     //注册通知
 
     [self registerRemoteNotifaction];

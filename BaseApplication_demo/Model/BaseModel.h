@@ -21,6 +21,8 @@
 @property (nonatomic, copy) NSString * modelId;
 //class
 @property (nonatomic, copy) NSString * modelClass;
+//new
+@property (copy, nonatomic) NSString *modelNew;
 //遇到再添加
 
 @end

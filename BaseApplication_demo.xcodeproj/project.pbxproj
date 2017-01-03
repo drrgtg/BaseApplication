@@ -37,6 +37,7 @@
 		E61394D51D87EDFC00E98943 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E61394D41D87EDFC00E98943 /* BaseModel.m */; };
 		E61394D81D87EF4900E98943 /* NSObject+propertyList.m in Sources */ = {isa = PBXBuildFile; fileRef = E61394D71D87EF4900E98943 /* NSObject+propertyList.m */; };
 		E61394DC1D87F2A900E98943 /* Model1.m in Sources */ = {isa = PBXBuildFile; fileRef = E61394DB1D87F2A900E98943 /* Model1.m */; };
+		E633F2201E1B4A7C00573500 /* SafariViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E633F21F1E1B4A7C00573500 /* SafariViewController.m */; };
 		E65AE2471E0CC0F000611DA4 /* ULSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E65AE2461E0CC0F000611DA4 /* ULSegmentControl.m */; };
 		E65AE2491E0D23A900611DA4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65AE2481E0D23A900611DA4 /* SystemConfiguration.framework */; };
 		E65AE2551E0D38C900611DA4 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = E65AE24F1E0D38C900611DA4 /* image.png */; };
@@ -154,6 +155,8 @@
 		E61394D91D87F10D00E98943 /* ModelAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelAPI.h; sourceTree = "<group>"; };
 		E61394DA1D87F2A900E98943 /* Model1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model1.h; sourceTree = "<group>"; };
 		E61394DB1D87F2A900E98943 /* Model1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model1.m; sourceTree = "<group>"; };
+		E633F21E1E1B4A7C00573500 /* SafariViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafariViewController.h; sourceTree = "<group>"; };
+		E633F21F1E1B4A7C00573500 /* SafariViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafariViewController.m; sourceTree = "<group>"; };
 		E65AE2451E0CC0F000611DA4 /* ULSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ULSegmentControl.h; sourceTree = "<group>"; };
 		E65AE2461E0CC0F000611DA4 /* ULSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ULSegmentControl.m; sourceTree = "<group>"; };
 		E65AE2481E0D23A900611DA4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -321,6 +324,7 @@
 		E60522E21E08FD3900B1CA21 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				E633F21D1E1B4A4B00573500 /* SafariVC */,
 				E60522E31E08FD7A00B1CA21 /* TableViewController.h */,
 				E60522E41E08FD7A00B1CA21 /* TableViewController.m */,
 				E65AE2DA1E0E2A0000611DA4 /* WkWebView */,
@@ -491,6 +495,15 @@
 				E61394DB1D87F2A900E98943 /* Model1.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E633F21D1E1B4A4B00573500 /* SafariVC */ = {
+			isa = PBXGroup;
+			children = (
+				E633F21E1E1B4A7C00573500 /* SafariViewController.h */,
+				E633F21F1E1B4A7C00573500 /* SafariViewController.m */,
+			);
+			name = SafariVC;
 			sourceTree = "<group>";
 		};
 		E65AE2971E0E283200611DA4 /* dirName */ = {
@@ -709,6 +722,7 @@
 				E613946C1D8786EE00E98943 /* Frameworks */,
 				E613946D1D8786EE00E98943 /* Resources */,
 				28986372BAA26E96CDB21FDB /* [CP] Copy Pods Resources */,
+				8124B3F8215FB23AD101947E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -857,6 +871,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BaseApplication_demo/Pods-BaseApplication_demo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8124B3F8215FB23AD101947E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BaseApplication_demoUITests/Pods-BaseApplication_demoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		98FC3D7A01CB5C8B46240889 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -869,7 +898,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B034F45CE5BFCAF2ECD07DE7 /* [CP] Check Pods Manifest.lock */ = {
@@ -884,7 +913,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D1E6D1C8F5EAA4FEC468918C /* [CP] Copy Pods Resources */ = {
@@ -914,7 +943,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E65AE2D81E0E286200611DA4 /* ShellScript */ = {
@@ -945,6 +974,7 @@
 				E61394D51D87EDFC00E98943 /* BaseModel.m in Sources */,
 				E65AE2471E0CC0F000611DA4 /* ULSegmentControl.m in Sources */,
 				E61394D81D87EF4900E98943 /* NSObject+propertyList.m in Sources */,
+				E633F2201E1B4A7C00573500 /* SafariViewController.m in Sources */,
 				E60522E51E08FD7A00B1CA21 /* TableViewController.m in Sources */,
 				E61394B01D87A51E00E98943 /* CommonController.m in Sources */,
 				E60522EB1E0912B200B1CA21 /* NativeMapVC.m in Sources */,

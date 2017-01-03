@@ -9,7 +9,9 @@ pod 'SDWebImage', '~>3.8'
 pod 'MJRefresh'
 pod 'MWPhotoBrowser'
 pod 'SVProgressHUD'
-
+#pod 'AMap3DMap'  #3D地图SDK
+pod 'AMap2DMap' #2D地图SDK (2D和3D不能同时使⽤用)
+pod 'AMapSearch' #搜索功能
 
   # Pods for BaseApplication_demo
 
