@@ -7,6 +7,8 @@
 //  打开相机扫描二维码
 
 #import "ScanViewController.h"
+#import "QRCodeView.h"
+
 #import <CoreImage/CoreImage.h>
 //扫描二维码
 #import <AVFoundation/AVFoundation.h>
@@ -22,7 +24,7 @@ AVCaptureMetadataOutputObjectsDelegate
 @property (nonatomic, weak) AVCaptureSession *session;
 /** 预览图层 */
 @property (nonatomic, weak) AVCaptureVideoPreviewLayer *avLayer;
-
+@property (strong, nonatomic) QRCodeView   *qrCode;
 @end
 
 @implementation ScanViewController
@@ -31,6 +33,9 @@ AVCaptureMetadataOutputObjectsDelegate
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
+    self.qrCode = [[QRCodeView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-64)];
+    self.qrCode.transparentArea = CGSizeMake(250, 250);
+    [self.view addSubview:self.qrCode];
     
     [self scanQRCode];
 }
@@ -100,8 +105,19 @@ AVCaptureMetadataOutputObjectsDelegate
     
     // 4. 添加输出数据接口
     AVCaptureMetadataOutput *output = [[AVCaptureMetadataOutput alloc] init];
-    //5. 设置扫描范围
-    output.rectOfInterest = CGRectMake(0, 0, 1, 1);
+    //  5.设置扫描区域
+    CGFloat screenHeight = self.view.frame.size.height;
+    CGFloat screenWidth = self.view.frame.size.width;
+    CGRect cropRect = CGRectMake(
+                                      screenWidth / 2 - self.qrCode.transparentArea.width / 2,
+                                      60,
+                                      self.qrCode.transparentArea.width,
+                                      self.qrCode.transparentArea.height);
+    
+    [output setRectOfInterest:CGRectMake(cropRect.origin.y / screenHeight,
+                                          cropRect.origin.x / screenWidth,
+                                          cropRect.size.height / screenHeight,
+                                          cropRect.size.width / screenWidth)];
     
     // 设置输出接口代理
     [output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
@@ -135,10 +151,10 @@ AVCaptureMetadataOutputObjectsDelegate
          */
         AVMetadataMachineReadableCodeObject *object = [metadataObjects lastObject];
         NSLog(@"%@",object);
-        // 停止扫描
-        [self.session stopRunning];
-        // 将预览图层移除
-        [self.avLayer removeFromSuperlayer];
+//        // 停止扫描
+//        [self.session stopRunning];
+//        // 将预览图层移除
+//        [self.avLayer removeFromSuperlayer];
     }else{
         NSLog(@"没有扫描到数据");
     }

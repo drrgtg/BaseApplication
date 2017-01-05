@@ -45,7 +45,7 @@
     
     self.tabBar.tintColor = UIColorFromRGB(0x0085F4) ;
     //titile
-    self.firstVC.navigationItem.title = @"我是第一页";
+    self.firstVC.navigationItem.title = @"";
     self.secondVC.navigationItem.title = @"我是第二页";
     self.thirdVC.navigationItem.title = @"我是第三页";
     //ViewControllers

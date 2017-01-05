@@ -11,6 +11,7 @@
 #import "NativeMapVC.h"
 #import "WkWebViewController.h"
 #import "QRCodeViewController.h"
+#import "ELMMapViewController.h"
 
 
 #define FIRST_TABLE_CELL_ID     @"FIRST_TABLE_CELL_ID"
@@ -84,6 +85,11 @@ UITableViewDelegate
             pushVC = vc;
         }
             break;
+        case 3:
+        {
+            ELMMapViewController *vc = [[ELMMapViewController alloc] init];
+            pushVC= vc;
+        }
         default:
         break;
     }
@@ -111,9 +117,10 @@ UITableViewDelegate
     if (!_dataSouce)
     {
         _dataSouce = [NSMutableArray arrayWithObjects:
-                      @"原生地图(高仿饿了吗)",
+                      @"原生地图(高仿饿了么)",
                       @"WKWeb",
-                      @"二维码", nil];
+                      @"二维码",
+                      @"高德地图(高仿饿了么)",nil];
     }
     return _dataSouce;
 }

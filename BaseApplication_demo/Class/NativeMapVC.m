@@ -32,6 +32,7 @@ UITableViewDataSource
 @property (strong, nonatomic) NSMutableArray   *dataSourece;
 
 @property (nonatomic) BOOL  isFinished;
+
 @end
 
 @implementation NativeMapVC
@@ -56,22 +57,12 @@ UITableViewDataSource
         [weakSelf searchLocationInterst:weakSelf.centerLocation andInterstStr:weakSelf.interstStr];
         
     }];
-    CLLocManager *man = [CLLocManager shareLocationManager];
-    
-    man.delegate = self;
-    [man startLocation];
 }
-
--(void)locationWithLoc:(CLLocation *)cllocation
-{
-    NSLog(@"%@",cllocation);
-}
-
 #pragma mark ------------ 定位当前位置动画 --------------
 - (void)animationLocation:(CLLocation *)location
 {
     [self.mapView setCenterCoordinate:location.coordinate animated:YES];
-    [self.mapView setRegion:MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(0.01, 0.01)) animated:YES];
+    [self.mapView setRegion:MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(0.005, 0.005)) animated:YES];
     self.isFinished = YES;
 }
 
